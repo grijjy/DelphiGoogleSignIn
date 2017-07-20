@@ -27,7 +27,7 @@ Before continuing I wanted to say thank you to Dave Nottage and [Delphi Worlds](
 # Tokens, tokens, tokens!
 Google loves tokens!  While most other third-party APIs follow a basic OAuth/2 token flow to secure access, Google uses different tokens for various operations that in Google's own words, "provides increased security over your standard OAuth 2.0 flow" to their APIs.  In their APIs and documentation you will find references to Auth tokens, Id tokens, Access tokens, Refresh tokens, Server auth codes and more.  I picture a bunch of bored security researchers sitting around at Google and thinking of new ways to make it complicated for developers to access their APIs in the interest of security.  All kidding aside, once you figure out how and where to use the various token methodologies it will all work.
 
-To access the Google APIs in your app from Delphi you first must starting by authenticating with Google.  Once you are authenticated you can interact with the Google APIs with a variety of approaches.  If your application is web based or Windows based, you would obtain an OAuth/2 token from Google and use that token to call the various Google API endpoints using REST/HTTP.
+To access the Google APIs in your app from Delphi you first must start by authenticating with Google.  Once you are authenticated you can interact with the Google APIs with a variety of approaches.  If your application is web based or Windows based, you would obtain an OAuth/2 token from Google and use that token to call the various Google API endpoints using REST/HTTP.
 
 If your application is mobile based on iOS or Android, in the past Google would allow you obtain an OAuth/2 token using the Google SignIn SDK just like you would do on Windows or a web application, so that you could call REST/HTTP APIs directly from your client app.  Google however is depreciating this approach on mobile platforms in favor of using Firebase Id tokens instead and obfuscating the process of calling APIs using their SDK along with Firebase Id tokens.  On iOS it is still possible to request an OAuth/2 token or a Firebase Id token when you use the Google SignIn SDK, but on Android you can now only obtain a Firebase Id token using the Google SDK.  I expect Google to phase out OAuth/2 token access on all mobile platforms in the near future.
 
@@ -80,7 +80,7 @@ https://console.firebase.google.com
 
 The above steps are required for all the various ways we may use Google SignIn, whether we are using it via a web browser for OAuth/2 on Windows, using it for Firebase Id tokens on Android or iOS or using it with our server backend with server auth codes and refresh tokens.  More about this topic later.
 
-#Delphi's Androidapi.JNI.PlayServices unit
+# Delphi's Androidapi.JNI.PlayServices unit
 > This section covers the reasons why you cannot use the Google SDK directly from Delphi, but instead you must create a helper in Java to assist your Delphi application.  If you are not interested in the reasons why, you can skip this section.   
 
 In order to use the Google SignIn SDK directly from Delphi, we need to be able to access a variety of Java interfaces from Delphi code.  Most of those interfaces exist in Google Play Services.
@@ -241,7 +241,7 @@ Additionally, a good helper would assist us in logging out, revoking access and 
 We have created a [Java project that builds the google-helper.jar](https://github.com/grijjy/DelphiGoogleSignIn/tree/master/GoogleHelper) to perform all of these tasks.  This Java project is contained in our repository.  We also include the pre-built [google-helper.jar library in the our repository](https://github.com/grijjy/DelphiGoogleSignIn/tree/master/Libraries).
 
 ## Initializing Google SignIn
-The first method in our Google sign-in helper class is `initSignIn()`.  This method takes the context and a callback from the Delphi caller, the clientId for our Firebase project, a Delphi array of Google OAuth 2.0 Scopes and a boolean indicating if we want Google server auth codes (more on this topic later). 
+The first method in our [Google sign-in helper class](https://github.com/grijjy/DelphiGoogleSignIn/blob/master/GoogleHelper/app/src/main/java/com/grijjy/googlehelper/GoogleSignInHelper.java) is `initSignIn()`.  This method takes the context and a callback from the Delphi caller, the clientId for our Firebase project, a Delphi array of [Google OAuth 2.0 Scopes](https://developers.google.com/identity/protocols/googlescopes) and a boolean indicating if we want Google server auth codes (more on this topic later). 
 
 ```Java
     private GoogleApiClient.Builder rootGoogleApiClientBuilder;
@@ -390,7 +390,7 @@ In addition to the regular SignIn method we created in our helper, there is also
 The method checks for existing credentials and if they don't exist, it will attempt a normal sign-in authentication flow.
 
 # TgoGoogleSDK class
-To simplify the process of sign-in for your Delphi application, we created the TgoGoogleSDK class.  This class is constructed to follow the same public interface for all platforms (Windows, iOS and Android) for Google SignIn. 
+To simplify the process of sign-in for your Delphi application, we created the [TgoGoogleSDK class](https://github.com/grijjy/DelphiGoogleSignIn/blob/master/Google.Android.pas).  This class is constructed to follow the same public interface for all platforms (Windows, iOS and Android) for Google SignIn. 
 ```Delphi
   TgoGoogleSDK = class
   private
@@ -431,7 +431,7 @@ To simplify the process of sign-in for your Delphi application, we created the T
 ## Getting started with TgoGoogleSDK class
 To create the TgoGoogleSDK class for Android devices, you only need your client id.  This is the "web client" id (also known as the "client_type": 3 from the google-services.json) from our list of OAuth/2 Client Ids.
 
-You also need to determine the Google OAuth 2.0 Scopes you require.  The [Google OAuth 2.0 Scopes](https://developers.google.com/identity/protocols/googlescopes) determine the APIs that you will be allowed to use once the user of your app has consented.  This should match the APIs you have enabled in the Google Developer's Console, API Manager.
+You also need to determine the Google OAuth 2.0 Scopes you require.  The [Google OAuth 2.0 Scopes](https://developers.google.com/identity/protocols/googlescopes) determine the APIs that you will be allowed to use once the user of your app has consented.  This should match the APIs you have enabled in the [Google Developer's Console, API Manager](https://console.developers.google.com/apis/).
 
 To create the TgoGoogleSDK object,
 ```Delphi
@@ -527,7 +527,7 @@ If you want to make the changes required to an existing project to add Google Si
 `play-services-*.jar` (5 of them)
 `support-*.jar` (4 of them)
 
-7.  At this point you only need your "web client" id and the TgoGoogleSDK class as demonstrated in the Example GoogleSignIn project to SignIn to Google.
+7.  At this point you only need your "web client" id and the TgoGoogleSDK class as demonstrated in the [Example GoogleSignIn project to SignIn to Google](https://github.com/grijjy/DelphiGoogleSignIn/tree/master/Example.Firemonkey).
 
 # The lifecycle of making Google API calls
 As we discussed earlier, in a perfect world Delphi would consume all the Firebase SDKs into Java interfaces and could call them directly.  Fortunately Google provides REST/HTTP endpoints for their Firebase related APIs.  You can use these APIs from not just Android and iOS mobile apps, but Windows, web applications and server-side processes.
@@ -558,12 +558,12 @@ If your app interacts with a server-side backend, you are going to need to valid
 
 Since the Firebase Id token is simply a [Java Web Token](https://jwt.io/), we could use any commercial library or even OpenSSL APIs to decode it and verify it ourselves.  Google [discusses this approach in an article](https://developers.google.com/identity/sign-in/web/backend-auth).
 
-However, we can also use an HTTP/REST endpoint provided by Google to verify it.  Our example application shows the process of calling the HTTP tokeninfo endpoint to verify a token.  It takes care of the validation so we don't have to also load PEM certificates and perform various other steps to validate it ourselves.  
+However, we can also use an HTTP/REST endpoint provided by Google to verify it.  Our example application shows the process of calling the [HTTP tokeninfo endpoint](https://developers.google.com/identity/sign-in/web/backend-auth#calling-the-tokeninfo-endpoint) to verify a token.  It takes care of the validation so we don't have to also load PEM certificates and perform various other steps to validate it ourselves.  
 
 Once you receive the result from the tokeninfo endpoint, you still need to make sure that what you received matches your expectation and that it is not expired.
 
 ## Server authorization codes and Refresh tokens
-When you initiate Google SignIn in your app, you can request a server authentication code.  This value is sent along with your Firebase Id token to the token endpoint along with a request to grant_type of authorization_code to obtain a Refresh token.
+When you initiate Google SignIn in your app, you can [request a server authentication code](https://developers.google.com/identity/sign-in/web/server-side-flow#step_7_exchange_the_authorization_code_for_an_access_token).  This value is sent along with your Firebase Id token to the token endpoint along with a request to grant_type of authorization_code to obtain a Refresh token.
 
 Google will only provide the Refresh token a single time, all subsequent requests will result in a 'null' response from the API.  Therefore it is very important you retain the Refresh token on your backend.  
 
@@ -571,10 +571,10 @@ The Refresh token is only provided the first-time an Authentication code is used
 
 ![](http://i.imgur.com/W9Hh6yH.png)
 
-If you loose the token for some reason, you must revoke it and the user will be prompted to consent again.  The token you must revoke is the special access_token value that is returned from the call to the token_info endpoint.
+If you loose the token for some reason, you must revoke it and the user will be prompted to consent again.  The token you must revoke is the special access_token value that is returned from the call to the tokeninfo endpoint.
 
 ## Obtaining an OAuth/2 token
-Now that you have a valid Refresh token, you simply call the token endpoint with a grant_type of refresh_token to request an updated OAuth/2 access token.
+Now that you have a valid Refresh token, you simply [call the token endpoint with a grant_type of refresh_token](https://developers.google.com/identity/sign-in/web/server-side-flow) to request an updated OAuth/2 access token.
 
 This is the token you will use to make Google API calls.
 
@@ -583,10 +583,10 @@ Google tokens typically expire after one hour, so you will need to use the Refre
 ```Delphi
 DateTimeToUnix(TTimeZone.Local.ToUniversalTime(Now))
 ``` 
-If your server-side instance is running from a reasonably time synchronized environment, like we see at Google's Cloud in the Compute Engine or Amazon's Web Services, you are pretty safe that it is accurate.  However, you should always refresh token before the expiration to give the API request and all other processes ample time to finish.
+If your server-side instance is running from a reasonably time synchronized environment, like we see at Google's Cloud Compute Engine or Amazon's Web Services, you are pretty safe that it is accurate.  However, you should always refresh token before the expiration to give the API request and all other processes ample time to finish before your token expires.
 
 # TGoogleApi class
-We created a basic helper unit called TGoogleApi to simplify all of the above mentioned steps and make any Google API call.
+We created a basic helper unit called [TGoogleApi](https://github.com/grijjy/DelphiGoogleSignIn/blob/master/Google.API.pas) to simplify all of the above mentioned steps and make any Google API call.
 ```Delphi
   TGoogleApi = class
   public
@@ -635,10 +635,10 @@ This class could be used on any Delphi supported platform including Windows, Lin
 
 This class can be used server-side by providing the Client Id and Client Secret during construction.  This class can be used to clients by setting the property AccessToken and providing the Client Id (not the Client Secret) before making API calls. Some of the Google APIs do not require Client Id, Client Secret or Access Tokens.  In those cases you can use this class as well.
 
-The example project GoogleSignIn in our repository demonstrates all the capabilities of this class.
+The [example project GoogleSignIn](https://github.com/grijjy/DelphiGoogleSignIn/tree/master/Example.Firemonkey) in our repository demonstrates all the capabilities of this class.
 
 # Example Project GoogleSignIn
-The example project included in the repository is designed to demonstrate the entire lifecycle of handling Google SignIn, from initial sign-in all the way to making API calls.
+The [example project included in the repository](https://github.com/grijjy/DelphiGoogleSignIn/tree/master/Example.Firemonkey) is designed to demonstrate the entire lifecycle of handling Google SignIn, from initial sign-in all the way to making API calls.
 
 There are 5 tabs in the example project:  
 1.  Sign-in
@@ -647,10 +647,10 @@ There are 5 tabs in the example project:
 4.  Obtaining an OAuth/2 access token from a refresh token
 5.  Making API calls with the OAuth/2 token
 
-In order to fully use the example project you will need your "Client Id", which is your web client id from the Google Developers Console.  You will also need your "Client Secret" from the Google Developers Console.
+In order to fully use the example project you will need your "Client Id", which is your web client id from the Google Developers Console.  You will also need your "Client Secret" from the [Google Developers Console](https://console.developers.google.com/).
 > **The Client Secret should never be included in your client app**.  Most Google APIs do not need it unless those APIs are intended to be executed from the server-side.  For the purposes of this example we show the entire lifecycle of the Google SignIn process so it is included for demonstration purposes. 
 
-In order for the example application to make API calls to the People API and the YouTube API you must enable those APIs in the Google Developers Console, API Manager.  This step is required in addition to requesting the scopes.
+In order for the example application to make API calls to the People API and the YouTube API you must enable those APIs in the [Google Developers Console, API Manager](https://console.cloud.google.com/apis).  This step is required in addition to requesting the scopes.
 
 To run the demo, simply paste your "Client Id" and "Client Secret" into the respective edits and click the SignIn button.  
 
@@ -678,7 +678,7 @@ And finally, we can use the OAuth/2 token to make Google API calls.
 # Troubleshooting problems with Google SignIn
 If you are receiving errors such as INVALID_AUDIENCE or DEVELOPER_ERROR from Google SignIn when you run the example project or your own project you need to carefully verify that you didn't make any of the common mistakes:
 
-1.  **SHA1 hash is missing or incorrect**.  Make sure you provided the correct SHA1 hash to the Firebase console for the debug.keystore for Debug configuration apps or the application keystore for Release apps.  Make sure you are grabbing the SHA1 hash from the correct installed Delphi version folder.
+1.  **SHA1 hash is missing or incorrect**.  Make sure you provided the correct SHA1 hash to the [Firebase console](https://console.firebase.google.com/) for the debug.keystore for Debug configuration apps or the application keystore for Release apps.  Make sure you are grabbing the SHA1 hash from the correct installed Delphi version folder.
 2.  **SHA1 hash is associated with the wrong Firebase project**.  Make sure you have selected the correct project in the Firebase console when you apply the SHA1 hash.
 3.  **The package name associated with the Firebase project does not match the Delphi project package name**.  Check your finalized `AndroidManifest.xml` and compare the package name to one in the Firebase console for your project.  If they don't match you will need to add a new Android App option to your project with the correct name (or correct the Delphi package name) and recreate your google-services.json.  
 4.  **The Client Id you are passing to the TgoGoogle constructor is the wrong one**.  This is common mistake as it IS NOT the Android Client Id, as one might expect for an Android application, but it is instead the server-side OAuth/2 id we must use.  This client id is also called the "web client" id in the Google Credentials area of the console (https://console.developers.google.com/apis/credentials) or client_type "3" in your google-services.json.
