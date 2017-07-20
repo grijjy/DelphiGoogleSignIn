@@ -1,0 +1,570 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'TabbedForm'
+  ClientHeight = 593
+  ClientWidth = 355
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object HeaderToolBar: TToolBar
+    Anchors = []
+    Size.Width = 355.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ToolBarLabel: TLabel
+      Align = Contents
+      Size.Width = 355.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+      Text = 'Google SignIn'
+    end
+  end
+  object TabControlGoogle: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 355.000000000000000000
+    Size.Height = 545.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = PlatformDefault
+    Sizes = (
+      355s
+      496s
+      355s
+      496s
+      355s
+      496s
+      355s
+      496s
+      355s
+      496s)
+    object TabItemSignIn: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 71.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemtoprated'
+      TabOrder = 0
+      Text = 'Sign-in'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object ButtonSignIn: TButton
+        Position.X = 16.000000000000000000
+        Position.Y = 163.000000000000000000
+        Size.Width = 129.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Sign In'
+        OnClick = ButtonSignInClick
+      end
+      object ButtonSignOut: TButton
+        Position.X = 152.000000000000000000
+        Position.Y = 163.000000000000000000
+        Size.Width = 121.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        Text = 'Sign Out'
+        OnClick = ButtonSignOutClick
+      end
+      object EditClientId: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 5
+        Position.X = 16.000000000000000000
+        Position.Y = 34.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object LabelClientId: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Client Id'
+        TabOrder = 13
+      end
+      object CheckBoxRequestServerAuthCode: TCheckBox
+        IsChecked = True
+        Position.X = 16.000000000000000000
+        Position.Y = 138.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 15
+        Text = 'Request ServerAuthCode'
+      end
+      object EditSignInUserId: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Position.X = 16.000000000000000000
+        Position.Y = 224.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object LabelUserId: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 208.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'UserId'
+        TabOrder = 10
+      end
+      object LabelSignInIdToken: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 264.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Firebase Id Token'
+        TabOrder = 8
+      end
+      object EditSignInIdToken: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 16.000000000000000000
+        Position.Y = 280.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object LabelSignInAuthCode: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 320.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'AuthCode'
+        TabOrder = 9
+      end
+      object LabelEmail: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 376.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Email'
+        TabOrder = 7
+      end
+      object EditSignInEmail: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 16.000000000000000000
+        Position.Y = 392.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object EditSignInAuthCode: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Position.X = 16.000000000000000000
+        Position.Y = 336.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object LabelClientSecret: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 68.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Client Secret'
+        TabOrder = 12
+      end
+      object EditClientSecret: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Position.X = 16.000000000000000000
+        Position.Y = 90.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object TabItemVerify: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 71.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemcontacts'
+      TabOrder = 0
+      Text = 'Verify'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object LabelVerifyIdToken: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Firebase Id Token'
+        TabOrder = 8
+      end
+      object EditVerifyIdToken: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 16.000000000000000000
+        Position.Y = 32.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ButtonVerify: TButton
+        Position.X = 16.000000000000000000
+        Position.Y = 72.000000000000000000
+        Size.Width = 153.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Verify Token'
+        OnClick = ButtonVerifyClick
+      end
+      object MemoVerify: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Position.X = 16.000000000000000000
+        Position.Y = 256.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 225.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 15
+        Viewport.Width = 321.000000000000000000
+        Viewport.Height = 217.000000000000000000
+      end
+      object LabelVerifyEmail: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 136.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Email'
+        TabOrder = 11
+      end
+      object EditVerifyEmail: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Position.X = 16.000000000000000000
+        Position.Y = 152.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object EditVerifyName: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Position.X = 16.000000000000000000
+        Position.Y = 208.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object LabelVerifyName: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 192.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Name'
+        TabOrder = 9
+      end
+      object LabelVerifyResult: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 480.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+      end
+    end
+    object TabItemGrant: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 71.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemrecent'
+      TabOrder = 0
+      Text = 'AuthCode'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object LabelAuthCodeIdToken: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Firebase Id Token'
+        TabOrder = 12
+      end
+      object EditAuthCodeIdToken: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Position.X = 16.000000000000000000
+        Position.Y = 32.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object LabelAuthCode: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 72.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'AuthCode'
+        TabOrder = 13
+      end
+      object EditAuthCode: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Position.X = 16.000000000000000000
+        Position.Y = 88.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ButtonAuthCodeGrantRefreshToken: TButton
+        Position.X = 16.000000000000000000
+        Position.Y = 136.000000000000000000
+        Size.Width = 217.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Grant Refresh Token'
+        OnClick = ButtonAuthCodeGrantRefreshTokenClick
+      end
+      object LabelAuthCodeRefreshToken: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 184.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Refresh Token'
+        TabOrder = 11
+      end
+      object EditAuthCodeRefreshToken: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 16.000000000000000000
+        Position.Y = 200.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object MemoAuthCode: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Position.X = 16.000000000000000000
+        Position.Y = 352.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 129.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 18
+        Viewport.Width = 321.000000000000000000
+        Viewport.Height = 121.000000000000000000
+      end
+      object LabelAuthCodeAccessToken: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 240.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Access Token'
+        TabOrder = 10
+      end
+      object EditAuthCodeAccessToken: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 16.000000000000000000
+        Position.Y = 256.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ButtonAuthCodeRevokeToken: TButton
+        Position.X = 16.000000000000000000
+        Position.Y = 304.000000000000000000
+        Size.Width = 177.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'Revoke Token'
+        OnClick = ButtonAuthCodeRevokeTokenClick
+      end
+    end
+    object TabItemOAuth2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 71.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabitemmostrecent'
+      TabOrder = 0
+      Text = 'OAuth2'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object LabelOAuth2RefreshToken: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Refresh Token'
+        TabOrder = 10
+      end
+      object EditOAuth2RefreshToken: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 16.000000000000000000
+        Position.Y = 32.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ButtonOAuth2GrantToken: TButton
+        Position.X = 16.000000000000000000
+        Position.Y = 80.000000000000000000
+        Size.Width = 217.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Grant OAuth/2 Token'
+        OnClick = ButtonOAuth2GrantTokenClick
+      end
+      object MemoOAuth2: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Position.X = 16.000000000000000000
+        Position.Y = 192.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 289.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 15
+        Viewport.Width = 321.000000000000000000
+        Viewport.Height = 281.000000000000000000
+      end
+      object EditOAuth2AccessToken: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 16.000000000000000000
+        Position.Y = 144.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object LabelOAuth2AccessToken: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 128.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'OAuth/2 Access Token'
+        TabOrder = 8
+      end
+    end
+    object TabItemAPI: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 71.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'API'
+      ExplicitSize.cx = 71.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object LabelAPIAccessToken: TLabel
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 21.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'OAuth/2 Access Token'
+        TabOrder = 8
+      end
+      object EditAPIAccessToken: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 16.000000000000000000
+        Position.Y = 32.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object ButtonAPIGetPerson: TButton
+        Position.X = 16.000000000000000000
+        Position.Y = 88.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        Text = 'Get Self (Person API)'
+        OnClick = ButtonAPIGetPersonClick
+      end
+      object MemoAPI: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Position.X = 16.000000000000000000
+        Position.Y = 176.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 305.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 16
+        Viewport.Width = 321.000000000000000000
+        Viewport.Height = 297.000000000000000000
+      end
+      object ButtonAPIGetPopularVideos: TButton
+        Position.X = 16.000000000000000000
+        Position.Y = 128.000000000000000000
+        Size.Width = 329.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Get Popular Videos (YouTube API)'
+        OnClick = ButtonAPIGetPopularVideosClick
+      end
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 312
+    Top = 8
+    GestureData = <
+      item
+        Control = Owner
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end>
+  end
+end

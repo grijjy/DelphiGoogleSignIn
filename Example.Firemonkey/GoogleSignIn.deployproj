@@ -1,0 +1,2391 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Condition="Exists('$(BDS)\bin\CodeGear.Deployment.targets')" Project="$(BDS)\bin\CodeGear.Deployment.targets"/>
+    <ProjectExtensions>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <PropertyGroup>
+        <DeviceId Condition="'$(Platform)'=='Android'">148a338c18d266d0</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice32'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
+        <DeviceId Condition="'$(Platform)'=='iOSSimulator'">iPhone5</DeviceId>
+    </PropertyGroup>
+    <ItemGroup Condition="'$(Platform)'=='Win64'"/>
+    <ItemGroup Condition="'$(Platform)'=='iOSDevice64'"/>
+    <ItemGroup Condition="'$(Platform)'=='iOSDevice32'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win32'"/>
+    <ItemGroup Condition="'$(Platform)'=='Linux64'"/>
+    <ItemGroup Condition="'$(Platform)'=='OSX32'">
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgsqlite3.dylib">
+            <RemoteDir>GoogleSignIn.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgsqlite3.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib">
+            <RemoteDir>GoogleSignIn.app\Contents\MacOS\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='Android'">
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_google_signin_btn_icon_light_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-eu\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-eu\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-pt-rBR\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-pt-rBR\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-gu\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-gu\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-hr\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-hr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-mn\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-mn\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-fr-rCA\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-fr-rCA\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ru\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ru\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-iw\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-iw\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-small\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage426</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ko\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ko\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-hy\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-hy\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-it\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-it\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-nb\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-nb\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-zh-rTW\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-zh-rTW\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-lo\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-lo\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ne\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ne\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-vi\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-vi\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-am\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-am\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\splash_image_def.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>splash_image_def.xml</RemoteName>
+            <DeployClass>AndroidSplashImageDef</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-bn\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-bn\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-bs\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-bs\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ml\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ml\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_disabled.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_disabled.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-lv\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-lv\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-zh-rHK\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-zh-rHK\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-kk\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-kk\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-in\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-in\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sq\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-sq\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_full_open_on_phone.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_full_open_on_phone.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-bs\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-bs\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-el\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-el\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_full_open_on_phone.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_full_open_on_phone.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-cs\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-cs\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_light_normal.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_google_signin_btn_icon_dark_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-large\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage640</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_google_signin_btn_text_light_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\common_google_signin_btn_icon_light_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ur\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ur\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\color\common_google_signin_btn_text_light.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\color\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-in\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-in\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-af\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-af\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-da\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-da\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-gl\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-gl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\styles.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values\</RemoteDir>
+            <RemoteName>styles.xml</RemoteName>
+            <DeployClass>AndroidSplashStyles</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-gl\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-gl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\common_google_signin_btn_icon_dark_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-lo\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-lo\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-lt\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-lt\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\googleg_standard_color_18.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>googleg_standard_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-hu\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-hu\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_google_signin_btn_text_light_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_google_signin_btn_icon_dark_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_google_signin_btn_icon_light_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-es\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-es\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_dark_focused.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_focused.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-lt\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-lt\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_light.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon72</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ta\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ta\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-zh-rTW\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-zh-rTW\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_google_signin_btn_icon_light_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\googleg_disabled_color_18.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>googleg_disabled_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\color\common_google_signin_btn_tint.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\color\</RemoteDir>
+            <RemoteName>common_google_signin_btn_tint.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_light.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-it\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-it\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-mn\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-mn\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\library\lib\mips\</RemoteDir>
+            <RemoteName>libGoogleSignIn.so</RemoteName>
+            <DeployClass>AndroidLibnativeMipsFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-te\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-te\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-mr\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-mr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-be\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-be\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-uk\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-uk\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\</RemoteDir>
+            <RemoteName>AndroidManifest.xml</RemoteName>
+            <DeployClass>ProjectAndroidManifest</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon144</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-pt-rBR\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-pt-rBR\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-en-rGB\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-en-rGB\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_disabled.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_disabled.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon96</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-af\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-af\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-az\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-az\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_google_signin_btn_icon_dark_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_dark_focused.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_focused.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\common_google_signin_btn_icon_dark_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-bg\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-bg\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-en-rGB\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-en-rGB\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ml\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ml\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-pt-rPT\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-pt-rPT\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_light_normal.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-hi\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-hi\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\common_google_signin_btn_icon_dark_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ms\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ms\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-pl\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-pl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xlarge\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage960</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\googleg_disabled_color_18.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>googleg_disabled_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-cs\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-cs\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\googleg_standard_color_18.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>googleg_standard_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\googleg_disabled_color_18.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>googleg_disabled_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_light_focused.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_focused.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_light.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\googleg_disabled_color_18.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>googleg_disabled_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sk\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-sk\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(NDKBasePath)\prebuilt\android-arm\gdbserver\gdbserver" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>gdbserver</RemoteName>
+            <DeployClass>AndroidGDBServer</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\common_google_signin_btn_icon_light_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ja\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ja\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-pa\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-pa\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-normal\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage470</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-zh-rCN\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-zh-rCN\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\color\common_google_signin_btn_text_dark.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\color\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-mk\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-mk\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\googleg_disabled_color_18.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>googleg_disabled_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\common_google_signin_btn_icon_light_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_dark_normal.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-tl\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-tl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_dark_normal.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-zh-rCN\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-zh-rCN\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\common_google_signin_btn_text_light_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sl\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-sl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\color\common_google_signin_btn_text_dark.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\color\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-pl\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-pl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\googleg_standard_color_18.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>googleg_standard_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-iw\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-iw\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ur\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ur\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\common_google_signin_btn_text_light_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ja\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ja\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-km\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-km\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\color\common_google_signin_btn_text_light.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\color\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-si\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-si\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-hr\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-hr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-fi\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-fi\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\googleg_disabled_color_18.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>googleg_disabled_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-hu\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-hu\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_google_signin_btn_icon_dark_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-uk\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-uk\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\googleg_standard_color_18.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>googleg_standard_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_dark.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\googleg_disabled_color_18.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>googleg_disabled_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-fr-rCA\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-fr-rCA\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ky\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ky\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-am\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-am\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-my\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-my\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ne\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ne\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_google_signin_btn_text_light_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-tr\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-tr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\common_google_signin_btn_text_light_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ru\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ru\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sl\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-sl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-tl\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-tl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sv\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-sv\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_light_focused.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_focused.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_light_normal.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-az\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-az\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sv\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-sv\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-de\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-de\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_disabled.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_disabled.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-nl\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-nl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon48</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sr\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-sr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_light_focused.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_focused.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-es-rUS\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-es-rUS\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\classes.dex" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\classes\</RemoteDir>
+            <RemoteName>classes.dex</RemoteName>
+            <DeployClass>AndroidClassesDexFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="Android\Debug\libGoogleSignIn.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libGoogleSignIn.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_light_focused.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_focused.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sq\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-sq\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-is\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-is\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-fr\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-fr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-bn\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-bn\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-da\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-da\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-hy\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-hy\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-pa\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-pa\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sw\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-sw\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-et\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-et\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-mr\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-mr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ms\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ms\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-uz\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-uz\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-kn\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-kn\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-fa\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-fa\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-de\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-de\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_full_open_on_phone.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_full_open_on_phone.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_google_signin_btn_icon_light_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_dark_focused.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_focused.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-gu\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-gu\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-km\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-km\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-hi\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-hi\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\googleg_standard_color_18.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>googleg_standard_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-ldpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon36</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-fa\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-fa\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ko\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ko\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_dark.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-fr\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-fr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sw\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-sw\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-nl\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-nl\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-es\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-es\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ro\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ro\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-mk\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-mk\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_disabled.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_disabled.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sk\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-sk\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-vi\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-vi\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_dark_normal.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-nb\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-nb\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-uz\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-uz\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libGoogleSignIn.so</RemoteName>
+            <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\color\common_google_signin_btn_tint.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\color\</RemoteDir>
+            <RemoteName>common_google_signin_btn_tint.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-zh-rHK\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-zh-rHK\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_dark_normal.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-sr\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-sr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_light.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ar\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ar\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-my\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-my\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ca\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ca\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-th\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-th\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-zu\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-zu\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-tr\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-tr\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-es-rUS\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-es-rUS\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_dark.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ar\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ar\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\common_google_signin_btn_text_light_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\common_full_open_on_phone.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>common_full_open_on_phone.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-pt-rPT\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-pt-rPT\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ky\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ky\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_dark.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-si\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-si\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-bg\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-bg\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\common_google_signin_btn_icon_dark_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-et\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-et\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-be\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-be\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xhdpi-v4\googleg_standard_color_18.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-xhdpi-v4\</RemoteDir>
+            <RemoteName>googleg_standard_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-zu\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-zu\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-hdpi-v4\googleg_standard_color_18.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-hdpi-v4\</RemoteDir>
+            <RemoteName>googleg_standard_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-fi\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-fi\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-el\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-el\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-th\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-th\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-kn\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-kn\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ta\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ta\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_icon_dark_focused.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_dark_focused.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ka\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-ka\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-te\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-te\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-kk\values.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\values-kk\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-is\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-is\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-eu\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-eu\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ca\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ca\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ro\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ro\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\common_google_signin_btn_text_dark_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_dark_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\common_google_signin_btn_text_light_normal_background.9.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\googleg_standard_color_18.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>googleg_standard_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-lv\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-lv\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\values-ka\values.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\values-ka\</RemoteDir>
+            <RemoteName>values.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-mdpi-v4\googleg_disabled_color_18.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable-mdpi-v4\</RemoteDir>
+            <RemoteName>googleg_disabled_color_18.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable\common_google_signin_btn_text_light_normal.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>GoogleSignIn\res\drawable\</RemoteDir>
+            <RemoteName>common_google_signin_btn_text_light_normal.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\Resources\Android\res\drawable-xxhdpi-v4\common_google_signin_btn_icon_light_normal_background.9.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>GoogleSignIn\res\drawable-xxhdpi-v4\</RemoteDir>
+            <RemoteName>common_google_signin_btn_icon_light_normal_background.9.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+    <ItemGroup Condition="'$(Platform)'=='iOSSimulator'">
+        <DeployFile Include="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib">
+            <RemoteDir>GoogleSignIn.app\</RemoteDir>
+            <RemoteName>libcgunwind.1.0.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\Redist\iossimulator\libPCRE.dylib">
+            <RemoteDir>GoogleSignIn.app\</RemoteDir>
+            <RemoteName>libPCRE.dylib</RemoteName>
+            <DeployClass>DependencyModule</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+    </ItemGroup>
+</Project>
